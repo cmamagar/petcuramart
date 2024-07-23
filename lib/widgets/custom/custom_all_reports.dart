@@ -42,6 +42,7 @@ Widget ReportContainer({
         ),
       ),
     ),
+    
   );
 }
 
@@ -71,38 +72,37 @@ Widget OrderContainer({
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Order #$orderNumber", style: CustomTextStyles.f10W400(color: AppColors.textColor)),
-                      Text(status, style: CustomTextStyles.f10W400(color: AppColors.primaryColor)),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Text("Customer: $customerName", style: CustomTextStyles.f10W400(color: AppColors.textColor)),
-                  const SizedBox(height: 10),
-                  Text("Payable: $payable", style: CustomTextStyles.f10W400(color: AppColors.textColor)),
-                  const SizedBox(height: 10),
-                  Text("Order Date: $orderDate", style: CustomTextStyles.f10W400(color: AppColors.textColor)),
-                ],
-              ),
-            ),
-            SizedBox(width: 15),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text("Phone: $phoneNumber", style: CustomTextStyles.f10W400(color: AppColors.textColor)),
-                const SizedBox(height: 10),
-                Text("Payment: $paymentMethod", style: CustomTextStyles.f10W400(color: AppColors.textColor)),
-              ],
-            ),
+            Text("Order #$orderNumber",
+                style: CustomTextStyles.f12W400(color: AppColors.textColor)),
+            Text(status,
+                style: CustomTextStyles.f12W400(color: AppColors.primaryColor)),
           ],
         ),
+        Divider(color: AppColors.secondaryTextColor,thickness: 0.5),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Customer: $customerName",
+                style: CustomTextStyles.f12W400(color: AppColors.textColor)),
+            Text("Phone: $phoneNumber",
+                style: CustomTextStyles.f12W400(color: AppColors.textColor)),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Payable: $payable",
+                style: CustomTextStyles.f12W400(color: AppColors.textColor)),
+            Text("Payment: $paymentMethod",
+                style: CustomTextStyles.f12W400(color: AppColors.textColor)),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Text("Order Date: $orderDate",
+            style: CustomTextStyles.f12W400(color: AppColors.textColor)),
       ],
     ),
   );
